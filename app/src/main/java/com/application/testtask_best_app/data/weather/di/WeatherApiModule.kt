@@ -1,5 +1,6 @@
 package com.application.testtask_best_app.data.weather.di
 
+import com.application.testtask_best_app.BuildConfig
 import com.application.testtask_best_app.core.network.annotations.NeedApiKey
 import com.application.testtask_best_app.data.weather.WeatherApi
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
@@ -23,9 +24,8 @@ import javax.inject.Singleton
 data object WeatherApiModule {
 
     private const val BASE_URL = "https://api.openweathermap.org/"
-    private const val API_KEY = "14955fbe94d9530e9b00b488f14accee"
 
-    private val apikeyInterceptor = ApiKeyInterceptor(API_KEY)
+    private val apikeyInterceptor = ApiKeyInterceptor(BuildConfig.API_KEY)
 
     @Provides
     @Singleton
